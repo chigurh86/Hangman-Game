@@ -6,26 +6,27 @@ var computerChoices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k",
 var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
 
 
-
-if (wins < 5){
-	function guessA() {
-		if (userGuess === "a" && computerGuess === "a") {
-			alert("The Computer guessed it!");
-			losses++;
+if (losses < 5){
+	if (wins < 5){
+		function guessA() {
+			if (userGuess === "a" && computerGuess === "a") {
+				alert("The Computer guessed it!");
+				losses++;
+			}
+			else {
+				alert("You won!");
+				wins++;
+			}
 		}
-		else {
-			alert("You won!");
-			wins++;
-		}
-	}
-	function guessB() {
-		if (userGuess === "b" && computerGuess === "b") {
-			alert("The Computer guessed it!");
-			losses++;
-		}
-		else{
-			alert("You won!");
-			wins++;
+		function guessB() {
+			if (userGuess === "b" && computerGuess === "b") {
+				alert("The Computer guessed it!");
+				losses++;
+			}
+			else{
+				alert("You won!");
+				wins++;
+			}
 		}
 	}
 }
