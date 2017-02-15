@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css?family=Barrio');
+
+h1{
+	font-family: 'Barrio', cursive;
+	text-align: center;
+	color: purple;
+	font-size: 55px;
+}
+p{
+	text-align: center;
+}
+
+h2{
+	font-size: 15px;
+	font-weight: lighter;
+	text-align: center;
+}
