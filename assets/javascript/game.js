@@ -1,21 +1,24 @@
-var wins = 0;
-var losses = 0;
+var winAmount = 0;
+var lossAmount = 0;
 var computerChoices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", 
 "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
 var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
 
+var userGuess = "a"
 
 if (losses < 5){
 	if (wins < 5){
 		function guessA() {
 			if (userGuess === "a" && computerGuess === "a") {
 				alert("The Computer guessed it!");
-				losses++;
+				lossAmount++;
+				losses.html = lossAmount;
 			}
 			else {
 				alert("You won!");
-				wins++;
+				winAmount++;
+				wins.html = winAmount;
 			}
 		}
 		function guessB() {
@@ -29,17 +32,19 @@ if (losses < 5){
 			}
 		}
 	}
+	else
+		alert("You won!")
 }
+	else
+		alert("You lost!")
 
 //connecting the keycodes
 document.body.onkeyup = function(e){
 
 		if (e.keyCode == 65){
 			//pushing the a
-			var userGuess = "a";
 			guessA();
 		}
-
 		if (e.keyCode == 66){
 			//pushing the b
 			userGuess = "b";
@@ -52,6 +57,8 @@ document.body.onkeyup = function(e){
 		}
 		if (e.keyCode == 68){
 			//pushing the d
+			userGuess = "d";
+			guessD();
 		}
 		if (e.keyCode == 69){
 			//pushing the e
@@ -121,6 +128,6 @@ document.body.onkeyup = function(e){
 		}
 	};
 //connecting the html	
-var wins = document.getElementById("wins");
-var losses = document.getElementById("losses");
+var wins = document.getElementById("win-id");
+var losses = document.getElementById("loss-id");
 var guessesLeft = document.getElementById("guesses-left");
