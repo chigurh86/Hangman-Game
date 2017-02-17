@@ -3,52 +3,37 @@ var lossAmount = 0;
 var computerChoices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", 
 "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
+
 var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
 
-var userGuess = ""
+var userGuess = "";
 
-if (losses < 5){
-	if (wins < 5){
-		function guessA() {
-			if (userGuess === "a" && computerGuess === "a") {
-				alert("The Computer guessed it!");
-				lossAmount++;
-				losses.textContent = lossAmount;
-			}
-			else {
-				alert("You won!");
-				winAmount++;
-				wins.textContent = winAmount;
-			}
-		}
-		function guessB() {
-			if (userGuess === "b" && computerGuess === "b") {
-				alert("The Computer guessed it!");
-				losses++;
-			}
-			else{
-				alert("You won!");
-				wins++;
-			}
-		}
+function guess() {
+	if (userGuess  === computerGuess) {
+		alert("The Computer guessed it!");
+		lossAmount++;
+		losses.textContent = lossAmount;
 	}
-	else
-		alert("You won!")
+	else {
+		alert("You won!");
+		winAmount++;
+		wins.textContent = winAmount;
+	}
 }
-	else
-		alert("You lost!")
 
 //connecting the keycodes
-document.body.onkeyup = function(e){
 
+document.body.onkeyup = function(e){
+	
 		if (e.keyCode == 65){
 			//pushing the a
-			guessA();
+			userGuess = "a";
+			guess();
 		}
 		if (e.keyCode == 66){
 			//pushing the b
 			userGuess = "b";
-			guessB();
+			guess();
 		}
 		if (e.keyCode == 67){
 			//pushing the c
